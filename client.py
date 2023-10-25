@@ -1,10 +1,5 @@
 import socket
 
-# Función para generar una clave compartida
-def generate_shared_key(p, g, secret):
-    shared_key = (g ** secret) % p
-    return shared_key
-
 # Configuración del cliente
 host = '127.0.0.1'
 port = 12345
@@ -30,6 +25,11 @@ server_public_key = int(client_socket.recv(1024).decode())
 # Generar clave compartida
 shared_key = (server_public_key ** client_private_key) % p
 
-print(f"Clave compartida en el cliente: {shared_key}")
+# Intercambio de claves compartidas
+client_socket.send(str(client_public_key).encode())
+server_key = int(client_socket.recv(1024).decode())
+
+print(f"Clave compartida en el cliente: {server_key}")
+
 
 client_socket.close()
