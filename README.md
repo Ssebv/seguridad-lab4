@@ -4,9 +4,7 @@ Esta es una aplicación cliente-servidor que implementa el algoritmo de intercam
 
 El objetivo de esta aplicación es permitir que dos partes, el cliente y el servidor, establezcan una clave compartida de forma segura, incluso si la comunicación entre ellas es interceptada por un tercero.
 
-## Imagen
-
-![Imagen de la aplicación](img/Public_key_shared_secret.png)
+![Public Key Shared Secret](img/Public_key_shared_secret.png)
 
 ## Características
 
